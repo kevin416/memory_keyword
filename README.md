@@ -4,3 +4,20 @@
 ## Keyword for daily
 
 ## Just a simple app to easy remembering what you done daily.
+
+# The Parent project needs to install the required dependencies
+
+composer require laravelcollective/html
+
+'providers' => [
+...
+Collective\Html\HtmlServiceProvider::class,
+...
+],
+
+'aliases' => [
+...
+'Form' => Collective\Html\FormFacade::class,
+'Html' => Collective\Html\HtmlFacade::class,
+...
+],
