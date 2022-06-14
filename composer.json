@@ -1,0 +1,21 @@
+{
+    "name": "yepos/keyword",
+    "description": "Record keyword for everyday.",
+    "type": "library",
+    "license": "MIT",
+    "author": [
+        {
+            "name": "Kevin Chen",
+            "email": "uncochen@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Yepos\\Keyword\\": "src/"
+        }
+    }
+}
