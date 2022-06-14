@@ -12,7 +12,10 @@ class KeywordServiceProvider extends ServiceProvider
 
         $this->mergeConfigFrom(__DIR__ . '/config/keyword.php','keyword');
 
-        $this->publishes([__DIR__ . '/config/keyword.php' => config_path('keyword.php')]);
+        $this->publishes([
+            __DIR__ . '/config/keyword.php' => config_path('keyword.php'),
+            __DIR__ . '/views' => resource_path('views/vendor/keyword')
+        ]);
 
 
     }
