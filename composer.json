@@ -17,5 +17,12 @@
         "psr-4": {
             "Yepos\\Keyword\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yepos\\Keyword\\KeywordServiceProvider"
+            ]
+        }
     }
 }
