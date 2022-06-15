@@ -21,10 +21,10 @@ class KeywordServiceProvider extends ServiceProvider
         ]);
 
         if (config('keyword.use_package_routes')) {
-            Route::group(['middleware' => ['YeposAdmin']], function () {
+//            Route::group(['middleware' => ['YeposAdmin']], function () {
 //                $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
                 Yepos::routes();
-            });
+//            });
         }
 
 
