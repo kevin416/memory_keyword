@@ -1,12 +1,13 @@
 <?php
 namespace Yepos\Keyword;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class KeywordServiceProvider extends ServiceProvider
 {
     public function boot(){
-        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+
         $this->loadViewsFrom(__DIR__ . '/views','keyword');
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
@@ -18,6 +19,12 @@ class KeywordServiceProvider extends ServiceProvider
 
 //            __DIR__ . '/views' => resource_path('views/vendor/keyword')
         ]);
+
+        if (config('keyword.use_package_routes')) {
+            Route::group(['prefix' => 'filemanager', 'middleware' => ['Web', 'Factory','YeposAdmin','Pos','Rst']], function () {
+                $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+            });
+        }
 
 
     }
