@@ -42,7 +42,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/keyword/store',
+                url: '/yepos/keyword/store',
                 data: {
                     '_token': $('input[name=_token]').val(),
                     'user_id': $('#user_id').val(),
@@ -50,7 +50,7 @@
                 },
                 success: function (data) {
                     toastr.success('Add Success', '成功', {timeOut: 4000});
-                    $('#load_keywords').load('/keyword/load');
+                    $('#load_keywords').load('/yepos/keyword/load');
                     $('#keyword').val('');
                     $('#keyword').focus();
                 },

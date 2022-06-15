@@ -6,7 +6,7 @@
                 @foreach($memory_keyword as $keyword)
                     @if($dates->date == $keyword->date)
                         <div class="col-auto badge bg-secondary fs-6 mx-1">
-                            <a onclick="confirmDelete('/keyword/delete','{{$keyword->id}}')">{{ $keyword->keyword }}</a>
+                            <a onclick="confirmDelete('/yepos/keyword/delete','{{$keyword->id}}')">{{ $keyword->keyword }}</a>
                         </div>
                     @endif
                 @endforeach
