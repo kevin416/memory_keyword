@@ -9,16 +9,11 @@ class ComposerStaticInit629d15bd1fd3dd2d1e3974f8929c3b7d
     public static $prefixLengthsPsr4 = array (
         'Y' => 
         array (
-            'Yepos\\YeposStyle\\' => 17,
             'Yepos\\Keyword\\' => 14,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Yepos\\YeposStyle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yepos/yepos_style/src',
-        ),
         'Yepos\\Keyword\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',

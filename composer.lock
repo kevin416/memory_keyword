@@ -4,54 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d217d45c63c19efbba2e0df6b06376ab",
-    "packages": [
-        {
-            "name": "yepos/yepos_style",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kevin416/yepos_style.git",
-                "reference": "87ec26c0769bb94d0b847bb0deb84bf9899af211"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kevin416/yepos_style/zipball/87ec26c0769bb94d0b847bb0deb84bf9899af211",
-                "reference": "87ec26c0769bb94d0b847bb0deb84bf9899af211",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Yepos\\YeposStyle\\YeposStyleServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yepos\\YeposStyle\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Style and Js for Yepos System",
-            "support": {
-                "issues": "https://github.com/kevin416/yepos_style/issues",
-                "source": "https://github.com/kevin416/yepos_style/tree/v1.0.0"
-            },
-            "time": "2022-06-15T03:12:41+00:00"
-        }
-    ],
+    "content-hash": "4934c905471e07e03145b3941fa8222b",
+    "packages": [],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "yepos/yepos_style": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
