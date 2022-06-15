@@ -3,9 +3,9 @@
 @section('head_title', 'Factory'.' | '.\Session::get('site_settings.site_name') )
 @section('content')
 
-
-    @include('keyword::nav')
-
+    @if(config('keyword.nav_bar') == true)
+        @include('keyword::nav')
+    @endif
 
     <div class="card shadow">
         <!--Card content-->
@@ -20,7 +20,7 @@
                     <!-- Title Input Form -->
                     <div class="input-group">
                         {!! Form::text('keyword', null, ['class' => 'form-control input-sm','autofocus', 'placeholder'=>'Keyword','id'=>'keyword']) !!}
-                        <button type="button" class="btn btn-outline-primary" id="submit_memory_keyword">Submit</button>
+                        <button type="button" class="btn btn-outline-primary" id="submit_memory_keyword">@lang('keyword::app.submit')</button>
                     </div>
                 </div>
 

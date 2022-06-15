@@ -1,4 +1,5 @@
 <?php
 return [
-    'testing' => 'This is for testing configuration'
+    'nav_bar' => true,
+    'nav_home_prefix' => '',
 ];

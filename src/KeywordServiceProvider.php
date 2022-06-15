@@ -11,11 +11,12 @@ class KeywordServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         $this->mergeConfigFrom(__DIR__ . '/config/keyword.php','keyword');
-
+        $this->loadTranslationsFrom(__DIR__.'/lang', 'keyword');
 
         $this->publishes([
             __DIR__ . '/config/keyword.php' => config_path('keyword.php'),
-            __DIR__ . '/views' => resource_path('views/vendor/keyword')
+
+//            __DIR__ . '/views' => resource_path('views/vendor/keyword')
         ]);
 
 

@@ -1,8 +1,8 @@
 
 <div class="row m-0 p-0 fixed-bottom" style="width: 100%;">
         <div class="btn-group p-0" role="group" aria-label="Basic mixed styles example">
-            <a href="/factory" class="btn btn-danger"  data-bs-toggle="tooltip"
-                    data-bs-placement="top" title="Home Page"><i class="fas fa-home"></i> 回到主页</a>
+            <a href="/{{config('keyword.nav_home_prefix')}}" class="btn btn-danger"  data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="Home Page"><i class="fas fa-home"></i> @lang('keyword::app.back_to_home')</a>
 
             <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -17,11 +17,11 @@
 {{--                    @endif--}}
 
                     <a class="dropdown-item py-2" href="/auth/logout">
-                        <i class="fas fa-sign-out"></i> 退出系统
+                        <i class="fas fa-sign-out"></i> @lang('keyword::app.exit_system')
                     </a>
                     <hr class="dropdown-divider">
-                    <a class="dropdown-item py-2" href="/lang/zh">中文</a>
-                    <a class="dropdown-item py-2" href="/lang/en">English</a>
+                    <a class="dropdown-item py-2" href="/lang/zh">@lang('keyword::app.chinese')</a>
+                    <a class="dropdown-item py-2" href="/lang/en">@lang('keyword::app.english')</a>
                 </ul>
             </div>
 
