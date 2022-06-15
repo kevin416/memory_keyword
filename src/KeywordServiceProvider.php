@@ -21,7 +21,7 @@ class KeywordServiceProvider extends ServiceProvider
         ]);
 
         if (config('keyword.use_package_routes')) {
-            Route::group(['prefix' => 'filemanager', 'middleware' => ['Web', 'Factory','YeposAdmin','Pos','Rst']], function () {
+            Route::group(['prefix' => 'yepos', 'middleware' => ['YeposAdmin']], function () {
                 $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
             });
         }
