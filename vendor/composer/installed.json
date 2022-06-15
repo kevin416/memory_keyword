@@ -1,14 +1,9 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "d217d45c63c19efbba2e0df6b06376ab",
     "packages": [
         {
             "name": "yepos/yepos_style",
             "version": "dev-master",
+            "version_normalized": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kevin416/yepos_style.git",
@@ -20,6 +15,7 @@
                 "reference": "87ec26c0769bb94d0b847bb0deb84bf9899af211",
                 "shasum": ""
             },
+            "time": "2022-06-15T03:12:41+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
@@ -29,6 +25,7 @@
                     ]
                 }
             },
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Yepos\\YeposStyle\\": "src/"
@@ -43,18 +40,9 @@
                 "issues": "https://github.com/kevin416/yepos_style/issues",
                 "source": "https://github.com/kevin416/yepos_style/tree/v1.0.0"
             },
-            "time": "2022-06-15T03:12:41+00:00"
+            "install-path": "../yepos/yepos_style"
         }
     ],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "yepos/yepos_style": 20
-    },
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "dev": true,
+    "dev-package-names": []
 }
