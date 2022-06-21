@@ -38,11 +38,41 @@
 
 @section('footer')
     <script type="text/javascript">
-        $('#submit_memory_keyword').click(function () {
+        // $(document).ready(function() {
+        //
+        //     init();
+        //
+        //     function init() {
+        //
+        //
+        //     }
+        // });
+        // function refreshData(fc_id) {
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: 'https://yepos.co.uk/get_keywords',
+        //         data: {
+        //             // 'fc_id': fc_id,
+        //             // 'node_id':[$('#nodeId').val()],
+        //             // 'line_id':[$('#lineInductId').val()],
+        //         },
+        //         success: function (result) {
+        //             updateDOM(result['dataModels']['palletizationData']);
+        //         },
+        //         error: function (request, error) {
+        //
+        //         },
+        //     });
+        //
+        // }
+
+
+
+            $('#submit_memory_keyword').click(function () {
 
             $.ajax({
                 type: 'POST',
-                url: '/yepos/keyword/store',
+                url: '/keyword/store',
                 data: {
                     '_token': $('input[name=_token]').val(),
                     'user_id': $('#user_id').val(),
@@ -50,7 +80,7 @@
                 },
                 success: function (data) {
                     toastr.success('Add Success', '成功', {timeOut: 4000});
-                    $('#load_keywords').load('/yepos/keyword/load');
+                    $('#load_keywords').load('/keyword/load');
                     $('#keyword').val('');
                     $('#keyword').focus();
                 },

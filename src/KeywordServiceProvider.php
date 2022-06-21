@@ -3,7 +3,7 @@ namespace Yepos\Keyword;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-
+use Yepos\Keyword\Http\Controllers\KeywordController;
 class KeywordServiceProvider extends ServiceProvider
 {
     public function boot(){
@@ -20,18 +20,14 @@ class KeywordServiceProvider extends ServiceProvider
 //            __DIR__ . '/views' => resource_path('views/vendor/keyword')
         ]);
 
-        if (config('keyword.use_package_routes')) {
-//            Route::group(['middleware' => ['auth']], function () {
-//                $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
-                Yepos::routes();
-//            });
-        }
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/routes/api.php');
 
 
     }
 
     public function register(){
-
+//        $this->app->alias(KeywordController::class, 'keyword');
     }
 
 

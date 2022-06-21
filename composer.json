@@ -10,12 +10,14 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-
-    },
     "autoload": {
         "psr-4": {
             "Yepos\\Keyword\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yepos\\Keyword\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -24,5 +26,13 @@
                 "Yepos\\Keyword\\KeywordServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "8.0.x-dev"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
     }
 }
