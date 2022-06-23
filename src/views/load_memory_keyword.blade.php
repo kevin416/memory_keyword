@@ -15,8 +15,3 @@
     </div>
 @endforeach
 
-    @if($memory_keyword->count('id')==0)
-        <div id="no_record_auto_hide">
-            <h3 class="text-center">还没有记录！</h3>
-        </div>
-    @endif

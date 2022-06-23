@@ -1,5 +1,7 @@
 @extends('keyword::temp')
+@section('header_styles')
 
+@endsection
 @section('head_title', 'Factory'.' | '.\Session::get('site_settings.site_name') )
 @section('content')
 
@@ -30,8 +32,10 @@
     </div>
 
 
-    <div id="load_keywords">
-        @include('keyword::load_memory_keyword')
+    <div id="app">
+        <keyword-card></keyword-card>
+
+{{--        @include('keyword::load_memory_keyword')--}}
     </div>
 
 @endsection
@@ -68,7 +72,8 @@
 
 
 
-            $('#submit_memory_keyword').click(function () {
+
+        $('#submit_memory_keyword').click(function () {
 
             $.ajax({
                 type: 'POST',
@@ -102,5 +107,5 @@
             }
         }
 
-</script>
+    </script>
 @endsection
