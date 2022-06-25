@@ -8,27 +8,83 @@ class KeywordServiceProvider extends ServiceProvider
 {
     public function boot(){
 
-        $this->loadViewsFrom(__DIR__ . '/views','keyword');
+        $this->registerMigration();
+
+        $this->registerTranslation();
+
+        $this->registerResources();
+
+        $this->registerRoutes();
+
+        $this->defineAssetPublishing();
+
+        $this->offerPublishing();
+
+        $this->registerCommands();
+
+    }
+
+    protected function registerMigration(){
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+    }
 
-        $this->mergeConfigFrom(__DIR__ . '/config/keyword.php','keyword');
+    protected function registerTranslation(){
         $this->loadTranslationsFrom(__DIR__.'/lang', 'keyword');
+    }
 
+    public function defineAssetPublishing()
+    {
+        $this->publishes([
+            __DIR__ .'/../public' => public_path('vendor/keyword'),
+        ], ['keyword-assets', 'laravel-assets']);
+    }
+
+    protected function offerPublishing()
+    {
         $this->publishes([
             __DIR__ . '/config/keyword.php' => config_path('keyword.php'),
 
 //            __DIR__ . '/views' => resource_path('views/vendor/keyword')
         ]);
-
-        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
-        $this->loadRoutesFrom(__DIR__ . '/routes/api.php');
-
-
     }
-
     public function register(){
 //        $this->app->alias(KeywordController::class, 'keyword');
+        $this->configure();
     }
 
+    protected function registerRoutes()
+    {
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
+        Route::group($this->routeConfiguration(), function () {
+            $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+        });
+    }
+
+    protected function registerResources()
+    {
+        $this->loadViewsFrom(__DIR__ . '/../resources/views','keyword');
+    }
+
+    protected function routeConfiguration()
+    {
+        return [
+            'prefix' => 'api',
+//            'middleware' => config('custompackage.middleware'),
+        ];
+    }
+
+    protected function configure()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../config/keyword.php','keyword');
+    }
+
+    protected function registerCommands()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Console\AssetsCommand::class,
+            ]);
+        }
+    }
 }

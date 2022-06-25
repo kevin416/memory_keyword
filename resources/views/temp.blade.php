@@ -9,7 +9,7 @@
 
     {{--    <!-- Font Awesome JS -->--}}
     <link href="/inspinia/font-awesome/css/all_5.12.css" rel="stylesheet">
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{asset(mix('app.js', 'vendor/keyword'))}}"></script>
 
     @yield('header_styles')
 

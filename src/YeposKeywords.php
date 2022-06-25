@@ -10,7 +10,7 @@ use Yepos\Keyword\Http\Controllers\KeywordController;
 use Yepos\Keyword\Http\Controllers\LanguageController;
 use Yepos\Keyword\Models\MemoryKeyword;
 use Illuminate\Support\Facades\DB;
-
+use Yepos\Keyword\Http\Resources\KeywordResource;
 class YeposKeywords
 {
     protected $config;
@@ -30,10 +30,11 @@ class YeposKeywords
         return $memory_date;
     }
 
-
-    public function storeKeywords(){
-
+    public function apiKeywords(){
+        return KeywordResource::collection($this->keywordsByDate());
     }
+
+
     public function destroyKeywords(){
 
     }

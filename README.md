@@ -9,6 +9,12 @@
 
 composer require laravelcollective/html
 
+
+#### 整合在 Yepos 的安装办法，前后端分离
+
+
+#### 完全的前后端分离，在 yepos 端只做后端，另外做一下 app 前端
+
 'providers' => [
 ...
 Collective\Html\HtmlServiceProvider::class,

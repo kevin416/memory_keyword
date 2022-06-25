@@ -15,7 +15,7 @@ class MemoryKeyword extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id','keyword','created'];
+    protected $guarded = [];
 
     public function user()
     {

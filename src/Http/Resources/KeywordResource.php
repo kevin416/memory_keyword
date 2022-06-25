@@ -19,7 +19,7 @@ class KeywordResource extends JsonResource
     public function toArray($request)
     {
 
-        $memory_keyword = MemoryKeyword::select('keyword')->where("created",$this->created)->orderBy('created_at', 'DESC')->pluck('keyword');
+        $memory_keyword = MemoryKeyword::select('id','keyword')->where("created",$this->created)->orderBy('created_at', 'DESC')->get();
 
         return [
             'date' => $this->created,

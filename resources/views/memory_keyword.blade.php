@@ -9,30 +9,12 @@
         @include('keyword::nav')
     @endif
 
-    <div class="card shadow">
-        <!--Card content-->
-        <div class="card-body p-1">
-            @csrf
-            <div class="row">
 
-{{--                {!! Form::hidden('user_id', Sentinel::getUser()->id, ['class' => 'form-control input-sm','id'=>'user_id']) !!}--}}
-                {!! Form::hidden('user_id', 1, ['class' => 'form-control input-sm','id'=>'user_id']) !!}
-
-                <div class="col-12">
-                    <!-- Title Input Form -->
-                    <div class="input-group">
-                        {!! Form::text('keyword', null, ['class' => 'form-control input-sm','autofocus', 'placeholder'=>'Keyword','id'=>'keyword']) !!}
-                        <button type="button" class="btn btn-outline-primary" id="submit_memory_keyword">@lang('keyword::app.submit')</button>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 
 
     <div id="app">
+        <create-keyword></create-keyword>
+
         <keyword-card></keyword-card>
 
 {{--        @include('keyword::load_memory_keyword')--}}
@@ -42,37 +24,11 @@
 
 @section('footer')
     <script type="text/javascript">
-        // $(document).ready(function() {
-        //
-        //     init();
-        //
-        //     function init() {
-        //
-        //
-        //     }
-        // });
-        // function refreshData(fc_id) {
-        //     $.ajax({
-        //         type: 'GET',
-        //         url: 'https://yepos.co.uk/get_keywords',
-        //         data: {
-        //             // 'fc_id': fc_id,
-        //             // 'node_id':[$('#nodeId').val()],
-        //             // 'line_id':[$('#lineInductId').val()],
-        //         },
-        //         success: function (result) {
-        //             updateDOM(result['dataModels']['palletizationData']);
-        //         },
-        //         error: function (request, error) {
-        //
-        //         },
-        //     });
-        //
-        // }
 
 
 
 
+        import CreateKeyword from "../js/components/keyword/CreateKeyword";
         $('#submit_memory_keyword').click(function () {
 
             $.ajax({
@@ -106,6 +62,8 @@
                 }
             }
         }
-
+        export default {
+            components: {CreateKeyword}
+        }
     </script>
 @endsection
