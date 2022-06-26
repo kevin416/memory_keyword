@@ -10,17 +10,17 @@ class KeywordServiceProvider extends ServiceProvider
 
         $this->registerMigration();
 
-        $this->registerTranslation();
+//        $this->registerTranslation();
 
-        $this->registerResources();
+//        $this->registerResources();
 
         $this->registerRoutes();
 
-        $this->defineAssetPublishing();
+//        $this->defineAssetPublishing();
 
         $this->offerPublishing();
 
-        $this->registerCommands();
+//        $this->registerCommands();
 
     }
 
@@ -28,9 +28,9 @@ class KeywordServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
     }
 
-    protected function registerTranslation(){
-        $this->loadTranslationsFrom(__DIR__.'/lang', 'keyword');
-    }
+//    protected function registerTranslation(){
+//        $this->loadTranslationsFrom(__DIR__.'/lang', 'keyword');
+//    }
 
     public function defineAssetPublishing()
     {
@@ -54,17 +54,16 @@ class KeywordServiceProvider extends ServiceProvider
 
     protected function registerRoutes()
     {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
         Route::group($this->routeConfiguration(), function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
         });
     }
 
-    protected function registerResources()
-    {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views','keyword');
-    }
+//    protected function registerResources()
+//    {
+//        $this->loadViewsFrom(__DIR__ . '/../resources/views','keyword');
+//    }
 
     protected function routeConfiguration()
     {
@@ -79,12 +78,12 @@ class KeywordServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/keyword.php','keyword');
     }
 
-    protected function registerCommands()
-    {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                Console\AssetsCommand::class,
-            ]);
-        }
-    }
+//    protected function registerCommands()
+//    {
+//        if ($this->app->runningInConsole()) {
+//            $this->commands([
+//                Console\AssetsCommand::class,
+//            ]);
+//        }
+//    }
 }
