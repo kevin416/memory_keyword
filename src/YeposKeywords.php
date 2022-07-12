@@ -34,11 +34,4 @@ class YeposKeywords
         return KeywordResource::collection($this->keywordsByDate());
     }
 
-
-    public function destroyKeywords(){
-
-    }
-
-
-
 }

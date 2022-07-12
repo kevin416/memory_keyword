@@ -60,10 +60,6 @@ class KeywordServiceProvider extends ServiceProvider
         });
     }
 
-//    protected function registerResources()
-//    {
-//        $this->loadViewsFrom(__DIR__ . '/../resources/views','keyword');
-//    }
 
     protected function routeConfiguration()
     {
