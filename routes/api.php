@@ -11,6 +11,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::apiResource('keywords', KeywordController::class);
+    Route::get('tasks/finish/{id}', [TaskController::class,'update']);
     Route::apiResource('tasks', TaskController::class);
 
 });

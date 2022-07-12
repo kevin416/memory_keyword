@@ -24,7 +24,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->boolean('private')->default(0);
             $table->boolean('finished')->default(0);
-            $table->dateTime('finished_date');
+            $table->dateTime('finished_date')->nullable();
             $table->timestamps();
         });
     }
