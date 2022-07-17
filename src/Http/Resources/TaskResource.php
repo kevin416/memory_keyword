@@ -19,6 +19,7 @@ class TaskResource extends JsonResource
 //        $task = Tasks::where('finished',$this->finished)->orderBy('created_at','DESC')->get();
         $finished_task = Tasks::query()
             ->where('finished',1)
+            ->orderBy('updated_at','desc')
             ->get();
         $doing_task = Tasks::query()
             ->where('finished',0)
