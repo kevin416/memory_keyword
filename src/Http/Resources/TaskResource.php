@@ -23,6 +23,7 @@ class TaskResource extends JsonResource
             ->get();
         $doing_task = Tasks::query()
             ->where('finished',0)
+            ->orderBy('updated_at','desc')
             ->get();
 
 
